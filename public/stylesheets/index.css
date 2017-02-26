@@ -1,0 +1,42 @@
+.container.search-response-container{
+    padding-top: 4rem
+}
+
+.search-response-container .info{
+    text-align: center;
+
+}
+
+.search-box{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 6rem 3rem;
+}
+
+.search-box .search-input{
+
+    text-align: center;
+}
+
+.search-box .search-form {
+    width: 37rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap
+}
+
+.search-form .progress-container {
+    padding: .6rem 2rem;
+    color: #1D77EF;
+}
+
+.table.search-table {
+    word-wrap:break-word;
+    table-layout: fixed;
+
+}
+
+
