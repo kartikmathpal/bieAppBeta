@@ -8,11 +8,18 @@ var searchByKey = function(key, collection, callback) {
     if(collection == 'mis') {
         misDAO.searchByKey(key, callback)
     }
-}
+};
+
+var insertDocuments = function(documents, collection, callback) {
+    if(collection == 'mis') {
+        misDAO.insertDocuments(documents, callback)
+    }
+};
 
 
 
 
 module.exports = {
-    'searchByKey': searchByKey
+    'searchByKey': searchByKey,
+    'insertDocuments': insertDocuments
 };

@@ -9,7 +9,12 @@ var searchByKey = function(key, collection, callback) {
     mainDAO.searchByKey(key, collection, callback)
 };
 
+var insertDocuments = function(documents, collection, callback) {
+    mainDAO.insertDocuments(documents, collection, callback)
+}
+
 
 module.exports = {
-    'searchByKey': searchByKey
+    'searchByKey'    : searchByKey,
+    'insertDocuments': insertDocuments
 };

@@ -15,8 +15,10 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script>
+
  <script type="text/javascript" src="/javascripts/index.js"></script>
- <link rel="stylesheet" type="text/css" href="/stylesheetst/index.css">
+
+ <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
 
 <base href="/">
  </head>
@@ -27,10 +29,8 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-      <span>
-      	B I E
-      </span>
-        <!-- <img alt="Brand" src="..."> -->
+      <span>B I E</span>
+      <span>/</span><span>{{subApp}}</span>
       </a>
     </div>
   </div>
@@ -42,9 +42,10 @@
    <div class="progress-container" ng-show="searching"><i class="fa fa-spin fa-circle-o-notch" aria-hidden="true"></i></div>
  </form>
 </div>
+ {{{{raw-helper}}}}
  <div class="container search-response-container">
  	<div ng-show="matchedRecords.length == 0 && recordsFound" class="info">No records found matching your query</div>
- 	<div ng-show="matchedRecords.length > 0 && collection == 'BIE'" class="">
+ 	<div ng-show="matchedRecords.length > 0 && collection == 'mis'" class="">
  		<table class="table table-striped table-hover table-bordered table-condensed search-table">
  			<tr>
  				<th>FINAL TABLE</th>
@@ -66,7 +67,7 @@
  			</tr>
  		</table>
  	</div>
-
+     {{{{/raw-helper}}}}
   <div ng-show="matchedRecords.length > 0 && collection == 'ABINITIO'" class="">
     <table class="table table-striped table-hover table-bordered table-condensed search-table">
       <tr>

@@ -13,6 +13,7 @@
     "hbs": "~4.0.1",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2",
-    "mongodb":"2.2.24"
+    "mongodb":"2.2.24",
+    "mongoose":"4.8.5"
   }
 }

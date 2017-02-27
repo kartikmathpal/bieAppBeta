@@ -5,18 +5,28 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
-//##########################################
-var menu = require('./routes/menu');
-var search = require('./routes/search')
-//##########################################
+var hbs = require('hbs');
+
+//#################MY Routes#############################
+var viewRoutes = require('./routes/view_routes');
+// var users = require('./routes/users');
+
+// var menu = require('./routes/menu');
+var serviceRoutes = require('./routes/service_routes')
+//######################################################
 
 var app = express();
 
+
+hbs.registerHelper('raw-helper', function(options) {
+    return options.fn();
+});
+
 // view engine setup
+app.set('view engine', 'html');
+app.engine('html', hbs.__express);
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -26,10 +36,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
-app.use('/menu',menu);
-app.use('/search',search);
+app.use('/', viewRoutes);
+app.use('/service',serviceRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

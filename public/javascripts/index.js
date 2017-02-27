@@ -13,6 +13,10 @@
             $scope.key = ''
             $scope.recordsFound = false
             $scope.searching = false
+            url = $location.path()
+            subPath = url.split('/')
+            $scope.collection = subPath[subPath.length - 2];
+            $log.info('collection',$scope.collection)
 
             $scope.survey = function(key) {
 
@@ -21,17 +25,18 @@
                 if(key && key.trim()){
                     $log.info("search for", key)
                     $scope.searching = true
-                    $scope.collection = $location.search()['collection']
+                    // $scope.collection = $location.search()['collection']
                     $log.info('collection',$scope.collection)
-                    $http.get('rest_service/survey?key=' + key + '&collection=' + $scope.collection).then(
+                    $http.get('/service/search?key=' + key + '&collection=' + $scope.collection).then(
                         function successCallback(response){
-                            $log.info("response", response)
-                            $scope.matchedRecords = response.data
-                            $scope.recordsFound = true
-                            $scope.searching = false
+                            data = response.data;
+                            $log.info("response", JSON.stringify(data, null, 2))
+                            $scope.matchedRecords = data;
+                            $scope.recordsFound = true;
+                            $scope.searching = false;
                         },
                         function errorCallback(response) {
-                            $log.error("response", response)
+                            $log.error("response", response);
                             $scope.searching = false
                         }
                     )
