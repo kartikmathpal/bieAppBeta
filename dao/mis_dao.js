@@ -50,9 +50,11 @@ var searchByKeyTask = function(taskArguments, callback) {
     console.log('key:',key);
 
     var collection = database.collection(collectionName);
-    collection.find({
-        "FINAL_TBL": key
-    }).toArray(function(err, docs) {
+    collection.find(
+        //"FINAL_TBL": key
+        {"$or":[{"FINAL_TBL":{'$regex':key,'$options':'i'}},{"DRIVING_TBL":{'$regex':key,'$options':'i'}},{"AGG_TBL":{'$regex':key,'$options':'i'}},{"SOURCE":{'$regex':key,'$options':'i'}},
+            {"JOB":{'$regex':key,'$options':'i'}}, {"APPLN":{'$regex':key,'$options':'i'}},{"DESCRIPTION":{'$regex':key,'$options':'i'}}]}
+        ).toArray(function(err, docs) {
         console.log('err', err);
         if(err) {
             callback(err);
