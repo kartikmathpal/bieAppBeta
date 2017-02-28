@@ -1,13 +1,21 @@
+/*
+//Creates an Express application. The express() function is a top-level function exported by the express module.
+//var express = require('express');
+//var app = express();//The app object conventionally denotes the Express application.
+*/
+
 var express = require('express');
-var path = require('path');
+var path = require('path'); //path module provides utilities for working with file and directory paths
 var favicon = require('serve-favicon');
-var logger = require('morgan');
+var logger = require('morgan'); //Morgan is basically a logger, on any requests being made,it generates logs automatically.
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var hbs = require('hbs');
+var hbs = require('hbs');//hbs is a express.js wrapper for the handlebars.js javascript template engine.It is a template engine to make writing html code easier
+                         //But handlebars.js is meant for client-side copilation(the browser compiles the templates) so you need a wrapper like hbs.
+                         //A wrapper makes it possible to use for example a client-side library in express.js
 
-//#################MY Routes#############################
+//#################<MY Routes>###########################
 var viewRoutes = require('./routes/view_routes');
 // var users = require('./routes/users');
 

@@ -95,20 +95,5 @@ var insertDocumentsTask = function(taskArguments, taskCallback) {
     })
 };
 
-
-
-//Mongoose
-// var util = require('util');
-// var async = require('async');
-// var mongoose = require('mongoose');
-// var Schema = mongoose.Schema;
-// mongoose.connect("mongodb://admin_mis:misgmis@ds161039.mlab.com:61039/biedb");
-//
-//
-//
-//
-// mongoose.connect(process.env.DB_CONNECTION);
-
-
 module.exports.searchByKey = searchByKey;
 module.exports.insertDocuments = insertDocuments;

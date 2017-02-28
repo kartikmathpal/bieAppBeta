@@ -25,4 +25,4 @@ router.get('/bie_app/:sub_app/search_view',function(req,res,next){
 });
 
 
-module.exports = router;
+module.exports = router; //make this module available to other modules

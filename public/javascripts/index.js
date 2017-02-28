@@ -13,9 +13,9 @@
             $scope.key = ''
             $scope.recordsFound = false
             $scope.searching = false
-            url = $location.path()
-            subPath = url.split('/')
-            $scope.collection = subPath[subPath.length - 2];
+            url = $location.path()        //obtain the url
+            subPath = url.split('/')      //split the url to obtain the application name
+            $scope.collection = subPath[subPath.length - 2]; //application name obtained from the url i.e mis|abinitio|gmis
             $log.info('collection',$scope.collection)
 
             $scope.survey = function(key) {
