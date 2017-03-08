@@ -26,7 +26,7 @@ var createDatabaseConnectionAndExecuteTask = function(task, taskArguments, taskC
 
 //search function
 var searchByKey= function(key, callback){
-    if(database) {
+    if(database) { //check for MongoDB Connectivity
         searchByKeyTask(
             taskArguments = {
                 'key': key
@@ -52,9 +52,25 @@ var searchByKeyTask = function(taskArguments, callback) {
     var collection = database.collection(collectionName);
     collection.find(
         //"FINAL_TBL": key
-        {"$or":[{"FINAL_TBL":{'$regex':key,'$options':'i'}},{"DRIVING_TBL":{'$regex':key,'$options':'i'}},{"AGG_TBL":{'$regex':key,'$options':'i'}},{"SOURCE":{'$regex':key,'$options':'i'}},
-            {"JOB":{'$regex':key,'$options':'i'}}, {"APPLN":{'$regex':key,'$options':'i'}},{"DESCRIPTION":{'$regex':key,'$options':'i'}}]}
-        ).toArray(function(err, docs) {
+        // {"$or":[{"FINAL_TBL":{'$regex':key,'$options':'i'}},{"DRIVING_TBL":{'$regex':key,'$options':'i'}},{"AGG_TBL":{'$regex':key,'$options':'i'}},{"SOURCE":{'$regex':key,'$options':'i'}},
+        //     {"JOB":{'$regex':key,'$options':'i'}}, {"APPLN":{'$regex':key,'$options':'i'}},{"DESCRIPTION":{'$regex':key,'$options':'i'}}]}
+        // ).toArray(function(err, docs) {
+        {"$or":[
+            {"FINAL_TBL":{'$regex':key,'$options':'i'}},
+            {"DRIVING_TBL":{'$regex':key,'$options':'i'}},
+            {"AGG_TBL":{'$regex':key,'$options':'i'}},
+            {"SOURCE_TEAM":{'$regex':key,'$options':'i'}},
+            {"JOB":{'$regex':key,'$options':'i'}},
+            {"APPLN":{'$regex':key,'$options':'i'}},
+            {"DESCRIPTION":{'$regex':key,'$options':'i'}},
+            {"HISTORY":{'$regex':key,'$options':'i'}},
+            {"SRC_FILE_NAME":{'$regex':key,'$options':'i'}},
+            {"TGT_FILE_NAME":{'$regex':key,'$options':'i'}},
+            {"TGT_TEAM":{'$regex':key,'$options':'i'}}
+
+            ]
+        }
+    ).toArray(function(err, docs) {
         console.log('err', err);
         if(err) {
             callback(err);
@@ -91,7 +107,7 @@ var insertDocumentsTask = function(taskArguments, taskCallback) {
     var collection = database.collection(collectionName);
     var documents = taskArguments.documents;
     collection.insertMany(documents, function (err, result) {
-        taskCallback(err, result)
+        taskCallback(err, result);
     })
 };
 

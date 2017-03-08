@@ -50,26 +50,36 @@
 
  {{{{raw-helper}}}}
  <div class="container search-response-container">
- 	<div ng-show="matchedRecords.length == 0 && recordsFound" class="info">No records found matching your query</div>
+     <div ng-show="!searching && !recordsFound" class="info">No records found matching your query</div>
  	<div ng-show="matchedRecords.length > 0 && collection == 'mis'" class="">
  		<table class="table table-striped table-hover table-bordered table-condensed search-table">
  			<tr>
  				<th>FINAL TABLE</th>
-        <th>DRIVING TABLE</th>
- 				<th>AGGREGATION TABLE</th>
-        <th>SOURCE</th>
-        <th>JOB</th>
-        <th>APPLICATION</th>
-        <th>DESCRIPTION</th>
+                <th>DRIVING TABLE</th>
+ 				<!--<th>AGGREGATION TABLE</th>-->
+                <th>SOURCE</th>
+                <th>JOB</th>
+                <th>APPLICATION</th>
+                <th>DESCRIPTION</th>
+                <th>HISTORY</th>
+                <th>SOURCE FILE</th>
+                <th>TARGET FILE</th>
+                <th>TARGET TEAM</th>
+
  			</tr>
  			<tr ng-repeat="record in matchedRecords">
  				<td>{{record.FINAL_TBL}}</td>
  				<td>{{record.DRIVING_TBL}}</td>
-        <td>{{record.AGG_TBL}}</td>
-        <td>{{record.SOURCE}}</td>
-        <td>{{record.JOB}}</td>
-        <td>{{record.APPLN}}</td>
-        <td>{{record.DESCRIPTION}}</td>
+                <!--<td>{{record.AGG_TBL}}</td>-->
+                <td>{{record.SOURCE_TEAM}}</td>
+                <td>{{record.JOB}}</td>
+                <td>{{record.APPLN}}</td>
+                <td>{{record.DESCRIPTION}}</td>
+                <td>{{record.HISTORY}}</td>
+                <td>{{record.SRC_FILE_NAME}}</td>
+                <td>{{record.TGT_FILE_NAME}}</td>
+                <td>{{record.TGT_TEAM}}</td>
+
  			</tr>
  		</table>
  	</div>
