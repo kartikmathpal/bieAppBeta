@@ -7,13 +7,18 @@ var misDAO = require('./mis_dao');
 var abinitioDAO = require('./abinitio_dao');
 
 var searchByKey = function(key, collection, callback) {
-    if(collection == 'mis') {
+    if(collection === 'mis') {
         misDAO.searchByKey(key, callback)
     }
-    else {
-        if (collection == 'abinitio') {
+    else if {
+        if (collection === 'abinitio') {
             abinitioDAO.searchByKey(key, callback)
         }
+    }
+    else{
+      if (collection === 'gmis') {
+          abinitioDAO.searchByKey(key, callback)
+      }
     }
 };
 
@@ -27,7 +32,6 @@ var insertDocuments = function(documents, collection, callback) {
        }
     }
     else{
-
       if(collection=='gmis'){
         abinitioDAO.insertDocuments(documents, callback)
       }
