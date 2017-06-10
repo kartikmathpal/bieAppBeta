@@ -74,6 +74,7 @@ var searchByKeyTask = function(taskArguments, callback) {
 
 
 var insertDocuments = function(documents, callback) {
+  console.log('insertDocuments', documents);
     if(database) {
         insertDocumentsTask(
             taskArguments = {

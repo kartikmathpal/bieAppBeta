@@ -21,10 +21,16 @@ var insertDocuments = function(documents, collection, callback) {
     if(collection == 'mis') {
         misDAO.insertDocuments(documents, callback)
     }
-    else {
+    else if {
         if(collection=='abinitio'){
-        abinitioDAO.insertDocuments(key, callback)
+        abinitioDAO.insertDocuments(documents, callback)
+       }
     }
+    else{
+
+      if(collection=='gmis'){
+        abinitioDAO.insertDocuments(documents, callback)
+      }
     }
 };
 
