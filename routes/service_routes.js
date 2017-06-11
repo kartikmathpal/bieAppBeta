@@ -31,7 +31,7 @@ router.get('/search', function(req, res, next) {
 router.post('/:collection/documents',function(req,res,next){
     var collection = req.params['collection'];
 
-    if(collection == 'mis' || collection == 'abinitio') {
+    if(collection == 'mis' || collection == 'abinitio' || collection == 'gmis') {
         searchService.insertDocuments(req.body.documents, collection, callback = function(err, data) {
             if(err) {
                 res.status(500).end(JSON.stringify(err))
@@ -48,5 +48,3 @@ router.post('/:collection/documents',function(req,res,next){
 
 
 module.exports = router;
-
-

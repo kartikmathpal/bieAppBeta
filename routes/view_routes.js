@@ -17,7 +17,7 @@ router.get('/bie_app/sub_apps', function(req, res, next) {
 router.get('/bie_app/:sub_app/search_view',function(req,res,next){
     var subApp = req.params['sub_app'];
 
-    if(subApp == 'mis' || subApp == 'abinitio') {
+    if(subApp == 'mis' || subApp == 'abinitio'|| subApp == 'gmis') {
         res.render('search_view', {'subApp': subApp});
     } else {
         res.render('error', {'message': 'The subapp you are looking for does not exists'})

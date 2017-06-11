@@ -79,13 +79,13 @@
                 <td>{{record.SRC_FILE_NAME}}</td>
                 <td>{{record.TGT_FILE_NAME}}</td>
                 <td>{{record.TGT_TEAM}}</td>
-
  			</tr>
  		</table>
  	</div>
-     {{{{/raw-helper}}}}
 
-  <div ng-show="matchedRecords.length > 0 && collection == 'ABINITIO'" class="">
+
+
+  <div ng-show="matchedRecords.length > 0 && collection == 'abinitio' " class="">
     <table class="table table-striped table-hover table-bordered table-condensed search-table">
       <tr>
         <th>APPLICATION</th>
@@ -94,13 +94,42 @@
         <th>SOURCE CONTACT DETAILS</th>
       </tr>
       <tr ng-repeat="record in matchedRecords">
-        <td>{{record.Application}}</td>
-        <td>{{record.CA7_Jobname}}</td>
-        <td>{{record.Script_name}}</td>
+        <td>{{record.APPLICATION}}</td>
+        <td>{{record.JOBNAME}}</td>
+        <td>{{record.SCRIPT_NAME}}</td>
         <td>{{record.Source_contact_details}}</td>
       </tr>
     </table>
   </div>
+
+
+
+  <div ng-show="matchedRecords.length > 0 && collection == 'gmis' " class="">
+    <table class="table table-striped table-hover table-bordered table-condensed search-table">
+      <tr>
+        <th>JOB NAME</th>
+        <th>DESCRIPTION</th>
+        <th>TABLE NAME</th>
+        <th>COUNTRY</th>
+        <th>SOURCE</th>
+        <th>INTERFACE</th>
+        <th>DRIVING_TABLES</th>
+        <th>HISTORY</th>
+      </tr>
+      <tr ng-repeat="record in matchedRecords">
+        <td>{{record.JOB_ID}}</td>
+        <td>{{record.DESCRIPTION}}</td>
+        <td>{{record.TABLE_NAME}}</td>
+        <td>{{record.COUNTRY}}</td>
+        <td>{{record.SOURCE}}</td>
+        <td>{{record.INTERFACE}}</td>
+        <td>{{record.DRIVING_TABLES}}</td>
+        <td>{{record.HISTORY}}</td>
+       </tr>
+      </table>
+    </div>
+{{{{/raw-helper}}}}
+
  </div>
 
 

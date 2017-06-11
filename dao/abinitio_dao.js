@@ -57,8 +57,24 @@ var searchByKeyTask = function(taskArguments, callback) {
     console.log('Start Search ....\n')
     collection.find(
         //"FINAL_TBL": key
-        {"$or":[{"Application":{'$regex':key,'$options':'i'}},{"CA7_Jobname":{'$regex':key,'$options':'i'}},{"Script_name":{'$regex':key,'$options':'i'}},
-            {"Source_contact_details":{'$regex':key,'$options':'i'}}]}
+        {"$or":[
+          {"MWCM":{'$regex':key,'$options':'i'}},
+          {"IMPLEMENTATION_DATE":{'$regex':key,'$options':'i'}},
+          {"IMPLEMENTED_BY":{'$regex':key,'$options':'i'}},
+          {"APPLICATION":{'$regex':key,'$options':'i'}},
+          {"DESCRIPTION":{'$regex':key,'$options':'i'}},
+          {"JOBNAME":{'$regex':key,'$options':'i'}},
+          {"SCRIPT_NAME":{'$regex':key,'$options':'i'}},
+          {"SLA":{'$regex':key,'$options':'i'}},
+          {"SRC_TEAM_ID":{'$regex':key,'$options':'i'}},
+          {"SOURCE_FILE_TABLE":{'$regex':key,'$options':'i'}},
+          {"SRC_INTERFACE_IND":{'$regex':key,'$options':'i'}},
+          {"TGT_TEAM_ID":{'$regex':key,'$options':'i'}},
+          {"TARGET_FILE_TABLE":{'$regex':key,'$options':'i'}},
+          {"TGT_INTERFACE_IND":{'$regex':key,'$options':'i'}},
+          {"UPDTD_TS":{'$regex':key,'$options':'i'}}
+        ]
+      }
     ).toArray(function(err, docs) {
         console.log('err', err);
         if(err) {
