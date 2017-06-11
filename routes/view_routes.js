@@ -23,6 +23,8 @@ router.get('/bie_app/:sub_app/search_view',function(req,res,next){
         res.render('error', {'message': 'The subapp you are looking for does not exists'})
     }
 });
-
+router.get('/rest_service', function(req, res, next) {
+    res.render('notfound', { title: 'BIE APP' });
+});
 
 module.exports = router; //make this module available to other modules

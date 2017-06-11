@@ -28,7 +28,7 @@
  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/bie_app/sub_apps">
       <span>B I E</span>
       <span>/</span><span>{{subApp}}</span>
       </a>
@@ -91,13 +91,13 @@
         <th>APPLICATION</th>
         <th>JOB</th>
         <th>SCRIPT NAME</th>
-        <th>SOURCE CONTACT DETAILS</th>
+        <th>SOURCE TEAM ID</th>
       </tr>
       <tr ng-repeat="record in matchedRecords">
         <td>{{record.APPLICATION}}</td>
         <td>{{record.JOBNAME}}</td>
         <td>{{record.SCRIPT_NAME}}</td>
-        <td>{{record.Source_contact_details}}</td>
+        <td>{{record.SRC_TEAM_ID}}</td>
       </tr>
     </table>
   </div>
