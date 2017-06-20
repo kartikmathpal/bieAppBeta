@@ -91,13 +91,17 @@
         <th>APPLICATION</th>
         <th>JOB</th>
         <th>SCRIPT NAME</th>
-        <th>SOURCE TEAM ID</th>
+        <th>TEAM NAME</th>
+        <th>TEAM DL</th>
+        <th>TEAM CONTANCT</th>
       </tr>
       <tr ng-repeat="record in matchedRecords">
         <td>{{record.APPLICATION}}</td>
         <td>{{record.JOBNAME}}</td>
         <td>{{record.SCRIPT_NAME}}</td>
-        <td>{{record.SRC_TEAM_ID}}</td>
+        <td>{{record.TEAM_NAME}}</td>
+        <td>{{record.TEAM_DL}}</td>
+        <td>{{record.TEAM_CONTACT_NUM}}</td>
       </tr>
     </table>
   </div>

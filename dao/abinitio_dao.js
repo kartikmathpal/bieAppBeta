@@ -72,7 +72,11 @@ var searchByKeyTask = function(taskArguments, callback) {
           {"TGT_TEAM_ID":{'$regex':key,'$options':'i'}},
           {"TARGET_FILE_TABLE":{'$regex':key,'$options':'i'}},
           {"TGT_INTERFACE_IND":{'$regex':key,'$options':'i'}},
-          {"UPDTD_TS":{'$regex':key,'$options':'i'}}
+          {"UPDTD_TS":{'$regex':key,'$options':'i'}},
+          {"TEAM_NAME":{'$regex':key,'$options':'i'}},
+          {"TEAM_DL":{'$regex':key,'$options':'i'}},
+          {"TEAM_CONTACT_NUM":{'$regex':key,'$options':'i'}},
+          {"TEAM_INCIDENT_QUEUE":{'$regex':key,'$options':'i'}}
         ]
       }
     ).toArray(function(err, docs) {
