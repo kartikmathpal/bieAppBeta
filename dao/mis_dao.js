@@ -58,7 +58,6 @@ var searchByKeyTask = function(taskArguments, callback) {
         {"$or":[
             {"FINAL_TBL":{'$regex':key,'$options':'i'}},
             {"DRIVING_TBL":{'$regex':key,'$options':'i'}},
-            {"AGG_TBL":{'$regex':key,'$options':'i'}},
             {"SOURCE_TEAM":{'$regex':key,'$options':'i'}},
             {"JOB":{'$regex':key,'$options':'i'}},
             {"APPLN":{'$regex':key,'$options':'i'}},
@@ -66,7 +65,9 @@ var searchByKeyTask = function(taskArguments, callback) {
             {"HISTORY":{'$regex':key,'$options':'i'}},
             {"SRC_FILE_NAME":{'$regex':key,'$options':'i'}},
             {"TGT_FILE_NAME":{'$regex':key,'$options':'i'}},
-            {"TGT_TEAM":{'$regex':key,'$options':'i'}}
+            {"TGT_TEAM":{'$regex':key,'$options':'i'}},
+            {"TEAM_DL":{'$regex':key,'$options':'i'}},
+            {"TEAM_CONTACT_NUM":{'$regex':key,'$options':'i'}}
 
             ]
         }

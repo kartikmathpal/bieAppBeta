@@ -54,32 +54,38 @@
  	<div ng-show="matchedRecords.length > 0 && collection == 'mis'" class="">
  		<table class="table table-striped table-hover table-bordered table-condensed search-table">
  			<tr>
- 				<th>FINAL TABLE</th>
-                <th>DRIVING TABLE</th>
- 				<!--<th>AGGREGATION TABLE</th>-->
-                <th>SOURCE</th>
-                <th>JOB</th>
+
+
                 <th>APPLICATION</th>
+                <th>FINAL TABLE</th>
                 <th>DESCRIPTION</th>
                 <th>HISTORY</th>
+                <th>JOB</th>
+                <th>DRIVING TABLE</th>
+                <th>SOURCE TEAM</th>
+                <th>TEAM DL</th>
+                <th>TEAM CONTACT</th>
+                <th>TARGET TEAM NAME</th>
                 <th>SOURCE FILE</th>
                 <th>TARGET FILE</th>
-                <th>TARGET TEAM</th>
+                <!-- <th>INCIDENT Q Name</th> -->
 
  			</tr>
  			<tr ng-repeat="record in matchedRecords">
- 				<td>{{record.FINAL_TBL}}</td>
- 				<td>{{record.DRIVING_TBL}}</td>
-                <!--<td>{{record.AGG_TBL}}</td>-->
-                <td>{{record.SOURCE_TEAM}}</td>
-                <td>{{record.JOB}}</td>
                 <td>{{record.APPLN}}</td>
+                <td>{{record.FINAL_TBL}}</td>
                 <td>{{record.DESCRIPTION}}</td>
                 <td>{{record.HISTORY}}</td>
+                <td>{{record.JOB}}</td>
+                <td>{{record.DRIVING_TBL}}</td>
+                <td>{{record.SOURCE_TEAM}}</td>
+                <td>{{record.TEAM_DL}}</td>
+                <td>{{record.TEAM_CONTACT_NUM}}</td>
+                <td>{{record.TGT_TEAM}}</td>
                 <td>{{record.SRC_FILE_NAME}}</td>
                 <td>{{record.TGT_FILE_NAME}}</td>
-                <td>{{record.TGT_TEAM}}</td>
- 			</tr>
+                <!-- <td>{{record.TEAM_INCIDENT_QUEUE}}</td> -->
+      </tr>
  		</table>
  	</div>
 
